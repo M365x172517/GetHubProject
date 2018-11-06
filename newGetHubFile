@@ -1,0 +1,12 @@
+$authUrl = 'Your Authorization URL'
+$clientId = 'Your Client ID'
+$clientSecret = 'Your Client Secret'
+
+$tokenPayload = @{
+    "resource"='https://graph.windows.net'
+    "client_id" = $clientId
+    "client_secret" = $clientSecret
+    "grant_type"='client_credentials'}
+
+$response = Invoke-RestMethod $authUrl -Method Post -Body $tokenPayload
+$token = $response.access_token
