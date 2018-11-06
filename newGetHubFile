@@ -10,3 +10,4 @@ $tokenPayload = @{
 
 $response = Invoke-RestMethod $authUrl -Method Post -Body $tokenPayload
 $token = $response.access_token
+\\test
